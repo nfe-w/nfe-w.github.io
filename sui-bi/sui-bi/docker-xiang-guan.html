@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>docker 相关 | NFE-W`S BLOG</title>
+    <meta name="generator" content="VuePress 1.9.4">
+    <link rel="icon" href="/assets/avatar.jpg">
+    <meta name="description" content="Just a study note for myself">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.9560cdf5.js" as="script"><link rel="preload" href="/assets/js/2.3860c10d.js" as="script"><link rel="preload" href="/assets/js/16.c74803e1.js" as="script"><link rel="prefetch" href="/assets/js/10.3ad98984.js"><link rel="prefetch" href="/assets/js/11.1d1d4f3c.js"><link rel="prefetch" href="/assets/js/12.1c9bed86.js"><link rel="prefetch" href="/assets/js/13.9443e294.js"><link rel="prefetch" href="/assets/js/14.b123db89.js"><link rel="prefetch" href="/assets/js/15.6a578106.js"><link rel="prefetch" href="/assets/js/17.8aafbb96.js"><link rel="prefetch" href="/assets/js/18.ad72cc9e.js"><link rel="prefetch" href="/assets/js/19.4f7b7ed7.js"><link rel="prefetch" href="/assets/js/20.33c41533.js"><link rel="prefetch" href="/assets/js/21.a9abdf04.js"><link rel="prefetch" href="/assets/js/22.76aeb9d7.js"><link rel="prefetch" href="/assets/js/23.21d933cb.js"><link rel="prefetch" href="/assets/js/24.c388c30d.js"><link rel="prefetch" href="/assets/js/3.ecdaafbf.js"><link rel="prefetch" href="/assets/js/4.0c4f7f25.js"><link rel="prefetch" href="/assets/js/5.745c46fb.js"><link rel="prefetch" href="/assets/js/6.d4384980.js"><link rel="prefetch" href="/assets/js/7.05319014.js"><link rel="prefetch" href="/assets/js/8.1d30ec6b.js"><link rel="prefetch" href="/assets/js/9.bdb7d9b3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">NFE-W`S BLOG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/sui-bi/" class="nav-link router-link-active">
+  随笔
+</a></div><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://github.com/nfe-w/my-note" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Repo
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/nfe-w" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/sui-bi/" class="nav-link router-link-active">
+  随笔
+</a></div><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://github.com/nfe-w/my-note" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Repo
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/nfe-w" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>随笔</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/sui-bi/sui-bi/vuepress-pei-zhi-ji-lu.html" class="sidebar-link">VuePress 配置记录</a></li><li><a href="/sui-bi/sui-bi/filebeat-yu-logstash.html" class="sidebar-link">filebeat 与 logstash</a></li><li><a href="/sui-bi/sui-bi/valid-can-shu-xiao-yan-shi-yong-shuo-ming.html" class="sidebar-link">@Valid 参数校验使用说明</a></li><li><a href="/sui-bi/sui-bi/suppresswarnings-zhu-jie.html" class="sidebar-link">@SuppressWarnings() 注解参数</a></li><li><a href="/sui-bi/sui-bi/externalizable-yu-serializable-yi-tong.html" class="sidebar-link">Externalizable 与 Serializable 异同</a></li><li><a href="/sui-bi/sui-bi/java-zhong-de-xie-bian-yu-ni-bian.html" class="sidebar-link">Java 中的协变与逆变</a></li><li><a href="/sui-bi/sui-bi/java-zhong-hashmapde-put-yu-compute.html" class="sidebar-link">Java 中 HashMap 的 put 与 compute，computeIfAbsent 与 putIfAbsent 的区别</a></li><li><a href="/sui-bi/sui-bi/linux-fang-huo-qiang-bi-ji.html" class="sidebar-link">Linux 防火墙笔记</a></li><li><a href="/sui-bi/sui-bi/docker-xiang-guan.html" aria-current="page" class="active sidebar-link">docker 相关</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/docker-xiang-guan.html#docker-常用命令" class="sidebar-link">docker 常用命令</a></li><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/docker-xiang-guan.html#dockerfile" class="sidebar-link">Dockerfile</a></li><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/docker-xiang-guan.html#减小-docker-镜像大小的方法" class="sidebar-link">减小 Docker 镜像大小的方法</a></li><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/docker-xiang-guan.html#目录挂载的几种方式" class="sidebar-link">目录挂载的几种方式</a></li><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/docker-xiang-guan.html#docker-compose" class="sidebar-link">Docker-Compose</a></li><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/docker-xiang-guan.html#linux-下解决-docker-端口映射到宿主机后外网无法访问的问题" class="sidebar-link">linux 下解决 docker 端口映射到宿主机后外网无法访问的问题</a></li><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/docker-xiang-guan.html#docker-网络模式" class="sidebar-link">docker 网络模式</a></li></ul></li><li><a href="/sui-bi/sui-bi/mmac-docker-maven.html" class="sidebar-link">M1 Mac 使用 dockerfile-maven-plugin 插件 build 镜像报错问题</a></li><li><a href="/sui-bi/sui-bi/docker-bu-shu-elk.html" class="sidebar-link">docker 部署 ELK</a></li><li><a href="/sui-bi/sui-bi/logback-spring-chang-yong-pei-zhi.html" class="sidebar-link">logback-spring.xml 常用配置</a></li><li><a href="/sui-bi/sui-bi/spring-boot-xiang-mu-da-fat-jar-de-fang-fa.html" class="sidebar-link">spring-boot 项目打 fat-jar 的方法</a></li><li><a href="/sui-bi/sui-bi/linux-ming-ling-ji-lu.html" class="sidebar-link">Linux 命令记录</a></li><li><a href="/sui-bi/sui-bi/spring-cloud-xiang-guan.html" class="sidebar-link">spring-cloud 相关</a></li><li><a href="/sui-bi/sui-bi/dai-ma-ri-zhi-ji-lu-shi-jian.html" class="sidebar-link">My Logging Best Practices</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="docker-相关"><a href="#docker-相关" class="header-anchor">#</a> docker 相关</h1> <h2 id="docker-常用命令"><a href="#docker-常用命令" class="header-anchor">#</a> docker 常用命令</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>docker build -t image-name:tag <span class="token builtin class-name">.</span> <span class="token comment"># 使用当前目录作为构建上下文build镜像，. 为上下文环境，可以使用 .dockerignore 文件忽略不需要发送给 docker 引擎的文件</span>
+docker network create <span class="token punctuation">[</span>-d bridge<span class="token punctuation">]</span> test-net <span class="token comment"># 创建虚拟网络，用于多容器通信</span>
+docker run -d <span class="token punctuation">[</span>-it --rm<span class="token punctuation">]</span> <span class="token punctuation">[</span>--network<span class="token operator">=</span>host<span class="token punctuation">]</span> -e <span class="token assign-left variable">TZ</span><span class="token operator">=</span><span class="token string">&quot;Asia/Shanghai&quot;</span> -p 宿主机端口:容器端口 -v 宿主机绝对路径/volume-name:容器路径 --name 容器名称 --network 虚拟网络 --network-alias 虚拟网络别名 image-name:tag <span class="token comment"># 创建容器</span>
+
+<span class="token comment">#【镜像】</span>
+docker images
+docker pull image-name:tag
+docker rmi image-id
+docker <span class="token function">history</span> image-id <span class="token comment"># 逆向</span>
+
+<span class="token comment">#【容器】</span>
+docker <span class="token function">ps</span> -a
+docker <span class="token function">rm</span> container-id
+docker start container-id
+docker stop container-id
+
+docker volume <span class="token function">ls</span> <span class="token comment"># 查看 volume 列表</span>
+docker network <span class="token function">ls</span> <span class="token comment"># 查看网络列表</span>
+
+docker commit image-id image-name:tag <span class="token comment"># 将修改后的容器重新打包成一个镜像</span>
+docker tag image-id image-name:tag <span class="token comment"># 对镜像重命名</span>
+docker save image-name:tag <span class="token operator">&gt;</span> ~/docker_package.tar <span class="token comment"># 镜像打包成tar包</span>
+docker load -i docker_package.tar <span class="token comment"># 导入镜像</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><div class="language-shell line-numbers-mode"><pre class="language-shell"><code>docker run -it --rm --net<span class="token operator">=</span><span class="token string">&quot;host&quot;</span> --name demo-jdk openjdk:8-alpine
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="dockerfile"><a href="#dockerfile" class="header-anchor">#</a> Dockerfile</h2> <div class="language-docker line-numbers-mode"><pre class="language-docker"><code><span class="token instruction"><span class="token keyword">FROM</span> openjdk:8-alpine</span>
+<span class="token instruction"><span class="token keyword">MAINTAINER</span> nfe-w &lt;nfe-w@outlook.com&gt;</span>
+
+<span class="token comment"># https://blog.csdn.net/qq32933432/article/details/120944205</span>
+<span class="token comment"># volume只是指定了一个目录，用以在用户忘记启动时指定-v参数也可以保证容器的正常运行。</span>
+<span class="token comment"># 比如mysql，不能说用户启动时没有指定-v，然后删了容器，就把mysql的数据文件都删了，那样生产上是会出大事故的</span>
+<span class="token comment"># 所以mysql的dockerfile里面就需要配置volume</span>
+<span class="token comment"># 这样即使用户没有指定-v，容器被删后也不会导致数据文件都不在了，还是可以恢复的</span>
+<span class="token comment"># /var/lib/docker/volumes/{容器ID}</span>
+<span class="token comment"># 【如果-v和volume指定了同一个位置，会发生什么事呢？】会以-v设定的目录为准，其实volume指令的设定的目的就是为了避免用户忘记指定-v的时候导致的数据丢失，那么如果用户指定了-v，自然而然就不需要volume指定的位置了</span>
+VOLUMN /tmp # 声明容器中/tmp为匿名卷
+
+<span class="token comment"># 复制代码</span>
+ADD/COPY . /root/app/
+<span class="token comment"># 设置容器启动后的默认运行目录</span>
+<span class="token instruction"><span class="token keyword">WORKDIR</span> /root/app/</span>
+
+<span class="token comment"># 运行命令，安装依赖</span>
+<span class="token comment"># RUN 命令可以有多个，可以用 &amp;&amp; 连接多个命令来减少层级。</span>
+<span class="token instruction"><span class="token keyword">RUN</span> mkdir /root/logs <span class="token operator">\</span>
+ &amp;&amp; cd /root/logs <span class="token operator">\</span>
+ &amp;&amp; touch 1.log <span class="token operator">\</span>
+ &amp;&amp; rm -rf 1.log</span>
+ &amp;&amp; echo &quot;https://mirror.tuna.tsinghua.edu.cn/alpine/v3.4/main&quot; &gt;&gt; /etc/apk/repositories \
+ &amp;&amp; echo &quot;https://mirror.tuna.tsinghua.edu.cn/alpine/v3.4/community&quot; &gt;&gt; /etc/apk/repositories \
+ &amp;&amp; apk --update add curl bash ttf-dejavu \
+ &amp;&amp; rm -rf /var/cache/apk/*
+ 
+<span class="token comment"># 设置环境变量</span>
+<span class="token instruction"><span class="token keyword">ENV</span> WORK_PATH=/root/app</span>
+
+<span class="token comment"># 暴露端口，仅仅是一个标识，告诉使用者需要暴露哪个端口，也可用于随机映射端口时使用</span>
+<span class="token instruction"><span class="token keyword">EXPOSE</span> 8080</span>
+
+<span class="token comment"># 只能有一个ENTRYPOINT，当指定多个时，只有最后一个生效。</span>
+<span class="token comment"># 是容器启动后执行的命令，不可被docker run命令后面的参数覆盖</span>
+<span class="token comment"># 一般搭配 CMD 使用，一个定参一个变参</span>
+<span class="token instruction"><span class="token keyword">ENTRYPOINT</span> &lt;command&gt;</span>
+
+<span class="token comment"># 只能有一个CMD，当指定多个时，只有最后一个生效。</span>
+<span class="token comment"># 是容器启动后执行的命令，可被docker run命令后面的命令行参数覆盖</span>
+<span class="token comment">#</span>
+<span class="token comment"># 如果还需要运行其他命令可以用 &amp;&amp; 连接，也可以写成一个shell脚本去执行。</span>
+<span class="token comment"># 例如 CMD cd /app &amp;&amp; ./start.sh</span>
+<span class="token instruction"><span class="token keyword">CMD</span> [<span class="token string">&quot;java&quot;</span>,<span class="token string">&quot;-jar&quot;</span>,<span class="token string">&quot;xxx.jar&quot;</span>]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br></div></div><h2 id="减小-docker-镜像大小的方法"><a href="#减小-docker-镜像大小的方法" class="header-anchor">#</a> <a href="http://www.python88.com/topic/73118" target="_blank" rel="noopener noreferrer">减小 Docker 镜像大小的方法<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h2> <ol><li>添加<code>.dockerignore</code> 文件</li> <li>创建<code>Dockerfile</code> 时使用<code>FROM xxx-alpine</code> 的base镜像</li></ol> <blockquote><p>Alpine Linux是一个基于BusyBox和Musl Libc的Linux发行版，其最大的优势就是小。一个纯的基础Alpine Docker镜像在压缩后仅有2.67MB。
+Alpine的一个缺点是，其使用了Musl Libc作为传统的glibc的替代，编译软件的时候可能会遇到一些不可预知的问题，这一点会导致我们耗费不少不必要的时间。</p></blockquote> <ol start="3"><li>只安装最少的依赖</li></ol> <blockquote><p>以apt为例，apt-get在安装软件的时候，可以指定一个选项：<code>--no-install-recommends</code>，指定这个参数后，有一些非必须的依赖将不会被一起安装</p> <p><code>apt-get install --no-install-recommends wget ca-certificates</code></p></blockquote> <ol start="4"><li><p>尽量将中间依赖的安装与卸载操作放在一个步骤中</p> <blockquote><p>docker镜像是一个由“层”来堆叠起来的“千层饼”，我们可以使用<code>docker history</code>这条命令来查看任意一个镜像是由哪些层组成的，以及每一层的大小：</p> <p><img src="https://s2.loli.net/2021/12/21/EVIbxpdHfyCNumQ.png" alt="img"></p> <p>对于Dockerfile来说，这些层的数据都将会被保存在镜像中，即使后一层删除了前一层内保存的文件。</p></blockquote> <ol start="5"><li><p>多阶段编译</p></li> <li><p>使用slim版本的镜像</p></li></ol></li></ol> <h2 id="目录挂载的几种方式"><a href="#目录挂载的几种方式" class="header-anchor">#</a> 目录挂载的几种方式</h2> <ol><li><p><code>bind mount</code> 直接把宿主机目录映射到容器内，适合挂代码目录和配置文件。可挂到多个容器上。用法：<code>-v ~/code:/app</code></p></li> <li><p><code>volume</code> 由容器创建和管理，创建在宿主机，所以删除容器不会丢失，官方推荐，更高效，Linux 文件系统，适合存储数据库数据。可挂到多个容器上。用法：<code>-v db-data:/app</code></p></li> <li><p><code>tmpfs mount</code> 适合存储临时文件，存宿主机内存中。不可多容器共享，不常用。</p></li></ol> <p><img src="https://s2.loli.net/2021/12/21/1R3zZSrFIQmWTvN.png" alt="image.png"></p> <h2 id="docker-compose"><a href="#docker-compose" class="header-anchor">#</a> Docker-Compose</h2> <h3 id="docker-compose-yml"><a href="#docker-compose-yml" class="header-anchor">#</a> docker-compose.yml</h3> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&quot;3.7&quot;</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">app</span><span class="token punctuation">:</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span> ./
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 80<span class="token punctuation">:</span><span class="token number">8080</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./<span class="token punctuation">:</span>/app
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> TZ=Asia/Shanghai <span class="token comment"># 容器默认时间不是北京时间，增加 TZ=Asia/Shanghai 可以改为北京时间</span>
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis<span class="token punctuation">:</span>5.0.13
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> redis<span class="token punctuation">:</span>/data
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> TZ=Asia/Shanghai
+
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="相关命令"><a href="#相关命令" class="header-anchor">#</a> 相关命令</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>docker-compose up -d <span class="token comment"># 在后台运行只需要加一个 -d 参数</span>
+docker-compose <span class="token function">ps</span> <span class="token comment"># 查看运行状态</span>
+docker-compose stop <span class="token comment"># 停止运行</span>
+docker-compose restart <span class="token comment"># 重启</span>
+docker-compose restart service-name <span class="token comment"># 重启单个服务</span>
+docker-compose <span class="token builtin class-name">exec</span> service-name <span class="token function">sh</span> <span class="token comment"># 进入容器命令行</span>
+docker-compose logs <span class="token punctuation">[</span>service-name<span class="token punctuation">]</span> <span class="token comment"># 查看容器运行log</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="linux-下解决-docker-端口映射到宿主机后外网无法访问的问题"><a href="#linux-下解决-docker-端口映射到宿主机后外网无法访问的问题" class="header-anchor">#</a> linux 下解决 docker 端口映射到宿主机后外网无法访问的问题</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>sysctl net.ipv4.ip_forward <span class="token comment"># 查看是否允许转发 0-不允许转发  1-允许转发</span>
+
+<span class="token comment"># 解决办法</span>
+<span class="token function">vi</span> /etc/sysctl.conf
+<span class="token comment"># 或者</span>
+<span class="token function">vi</span> /usr/lib/sysctl.d/00-system.conf
+<span class="token comment"># 添加如下代码：</span>
+net.ipv4.ip_forward<span class="token operator">=</span><span class="token number">1</span>  <span class="token comment">#0-不允许转发  1-允许转发  默认0</span>
+
+<span class="token comment"># 重启network服务</span>
+systemctl restart network
+<span class="token comment"># 或者</span>
+<span class="token function">service</span> network-manager restart
+
+<span class="token comment"># 查看是否修改成功</span>
+sysctl net.ipv4.ip_forward <span class="token comment"># 如果返回为“net.ipv4.ip_forward = 1”则表示成功了</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h2 id="docker-网络模式"><a href="#docker-网络模式" class="header-anchor">#</a> docker 网络模式</h2> <blockquote><p>Docker容器运行的时候有<code>host</code>、<code>bridge</code>、<code>none</code>三种网络可供配置。默认是<code>bridge</code>，即桥接网络，以桥接模式连接到宿主机；<code>host</code>是宿主网络，即与宿主机共用网络；<code>none</code>则表示无网络，容器将无法联网。</p> <p>当容器使用<code>host</code>网络时，容器与宿主共用网络，这样就能在容器中访问宿主机网络，那么容器的<code>localhost</code>就是宿主机的<code>localhost</code>。</p> <p>在docker中使用<code>--network host</code>来为容器配置<code>host</code>网络：</p> <p>docker run -d --name nginx --network host nginx</p> <p>上面的命令中，没有必要像前面一样使用<code>-p 80:80 -p 443:443</code>来映射端口，是因为本身与宿主机共用了网络，容器中暴露端口等同于宿主机暴露端口。</p> <p>使用host网络不需要修改<code>nginx.conf</code>，仍然可以使用<code>localhost</code>，因而通用性比上一种方法好。但是，由于<code>host</code>网络没有<code>bridge</code>网络的隔离性好，使用<code>host</code>网络安全性不如<code>bridge</code>高。</p> <p>两种方法各有优劣，使用宿主机IP隔离性更好，但通用性不好；使用host网络，通用性好，但带来了暴露宿主网络的风险</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/sui-bi/sui-bi/linux-fang-huo-qiang-bi-ji.html" class="prev">
+        Linux 防火墙笔记
+      </a></span> <span class="next"><a href="/sui-bi/sui-bi/mmac-docker-maven.html">
+        M1 Mac 使用 dockerfile-maven-plugin 插件 build 镜像报错问题
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9560cdf5.js" defer></script><script src="/assets/js/2.3860c10d.js" defer></script><script src="/assets/js/16.c74803e1.js" defer></script>
+  </body>
+</html>

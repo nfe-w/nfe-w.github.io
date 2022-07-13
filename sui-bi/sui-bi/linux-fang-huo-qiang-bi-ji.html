@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux 防火墙笔记 | NFE-W`S BLOG</title>
+    <meta name="generator" content="VuePress 1.9.4">
+    <link rel="icon" href="/assets/avatar.jpg">
+    <meta name="description" content="Just a study note for myself">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.9560cdf5.js" as="script"><link rel="preload" href="/assets/js/2.3860c10d.js" as="script"><link rel="preload" href="/assets/js/15.6a578106.js" as="script"><link rel="prefetch" href="/assets/js/10.3ad98984.js"><link rel="prefetch" href="/assets/js/11.1d1d4f3c.js"><link rel="prefetch" href="/assets/js/12.1c9bed86.js"><link rel="prefetch" href="/assets/js/13.9443e294.js"><link rel="prefetch" href="/assets/js/14.b123db89.js"><link rel="prefetch" href="/assets/js/16.c74803e1.js"><link rel="prefetch" href="/assets/js/17.8aafbb96.js"><link rel="prefetch" href="/assets/js/18.ad72cc9e.js"><link rel="prefetch" href="/assets/js/19.4f7b7ed7.js"><link rel="prefetch" href="/assets/js/20.33c41533.js"><link rel="prefetch" href="/assets/js/21.a9abdf04.js"><link rel="prefetch" href="/assets/js/22.76aeb9d7.js"><link rel="prefetch" href="/assets/js/23.21d933cb.js"><link rel="prefetch" href="/assets/js/24.c388c30d.js"><link rel="prefetch" href="/assets/js/3.ecdaafbf.js"><link rel="prefetch" href="/assets/js/4.0c4f7f25.js"><link rel="prefetch" href="/assets/js/5.745c46fb.js"><link rel="prefetch" href="/assets/js/6.d4384980.js"><link rel="prefetch" href="/assets/js/7.05319014.js"><link rel="prefetch" href="/assets/js/8.1d30ec6b.js"><link rel="prefetch" href="/assets/js/9.bdb7d9b3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">NFE-W`S BLOG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/sui-bi/" class="nav-link router-link-active">
+  随笔
+</a></div><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://github.com/nfe-w/my-note" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Repo
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/nfe-w" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/sui-bi/" class="nav-link router-link-active">
+  随笔
+</a></div><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://github.com/nfe-w/my-note" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Repo
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/nfe-w" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>随笔</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/sui-bi/sui-bi/vuepress-pei-zhi-ji-lu.html" class="sidebar-link">VuePress 配置记录</a></li><li><a href="/sui-bi/sui-bi/filebeat-yu-logstash.html" class="sidebar-link">filebeat 与 logstash</a></li><li><a href="/sui-bi/sui-bi/valid-can-shu-xiao-yan-shi-yong-shuo-ming.html" class="sidebar-link">@Valid 参数校验使用说明</a></li><li><a href="/sui-bi/sui-bi/suppresswarnings-zhu-jie.html" class="sidebar-link">@SuppressWarnings() 注解参数</a></li><li><a href="/sui-bi/sui-bi/externalizable-yu-serializable-yi-tong.html" class="sidebar-link">Externalizable 与 Serializable 异同</a></li><li><a href="/sui-bi/sui-bi/java-zhong-de-xie-bian-yu-ni-bian.html" class="sidebar-link">Java 中的协变与逆变</a></li><li><a href="/sui-bi/sui-bi/java-zhong-hashmapde-put-yu-compute.html" class="sidebar-link">Java 中 HashMap 的 put 与 compute，computeIfAbsent 与 putIfAbsent 的区别</a></li><li><a href="/sui-bi/sui-bi/linux-fang-huo-qiang-bi-ji.html" aria-current="page" class="active sidebar-link">Linux 防火墙笔记</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/linux-fang-huo-qiang-bi-ji.html#使用-firewalld" class="sidebar-link">使用 firewalld</a></li><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/linux-fang-huo-qiang-bi-ji.html#使用-iptables" class="sidebar-link">使用 iptables</a></li></ul></li><li><a href="/sui-bi/sui-bi/docker-xiang-guan.html" class="sidebar-link">docker 相关</a></li><li><a href="/sui-bi/sui-bi/mmac-docker-maven.html" class="sidebar-link">M1 Mac 使用 dockerfile-maven-plugin 插件 build 镜像报错问题</a></li><li><a href="/sui-bi/sui-bi/docker-bu-shu-elk.html" class="sidebar-link">docker 部署 ELK</a></li><li><a href="/sui-bi/sui-bi/logback-spring-chang-yong-pei-zhi.html" class="sidebar-link">logback-spring.xml 常用配置</a></li><li><a href="/sui-bi/sui-bi/spring-boot-xiang-mu-da-fat-jar-de-fang-fa.html" class="sidebar-link">spring-boot 项目打 fat-jar 的方法</a></li><li><a href="/sui-bi/sui-bi/linux-ming-ling-ji-lu.html" class="sidebar-link">Linux 命令记录</a></li><li><a href="/sui-bi/sui-bi/spring-cloud-xiang-guan.html" class="sidebar-link">spring-cloud 相关</a></li><li><a href="/sui-bi/sui-bi/dai-ma-ri-zhi-ji-lu-shi-jian.html" class="sidebar-link">My Logging Best Practices</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux-防火墙笔记"><a href="#linux-防火墙笔记" class="header-anchor">#</a> Linux 防火墙笔记</h1> <h2 id="使用-firewalld"><a href="#使用-firewalld" class="header-anchor">#</a> 使用 firewalld</h2> <p>官方文档 <code>https://fedoraproject.org/wiki/FirewallD/zh-cn</code></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>systemctl status firewalld  <span class="token comment"># 查看防火墙状态</span>
+systemctl start firewalld   <span class="token comment"># 开启防火墙</span>
+systemctl stop firewalld    <span class="token comment"># 关闭防火墙</span>
+systemctl <span class="token builtin class-name">enable</span> firewalld  <span class="token comment"># 开机自启</span>
+systemctl disable firewalld <span class="token comment"># 取消开机自启</span>
+
+firewall-cmd --state        <span class="token comment"># 查看防火墙状态</span>
+firewall-cmd --list-all     <span class="token comment"># 查看规则</span>
+
+firewall-cmd --zone<span class="token operator">=</span>public --query-port<span class="token operator">=</span><span class="token number">80</span>/tcp <span class="token comment"># 查看某端口状态</span>
+firewall-cmd --reload <span class="token comment"># 以下操作，重新加载防火墙配置才会起作用</span>
+
+<span class="token comment"># --permanent 永久生效，没有此参数重启后失效</span>
+firewall-cmd <span class="token punctuation">[</span>--permanent<span class="token punctuation">]</span> <span class="token punctuation">[</span>–-zone<span class="token operator">=</span><span class="token punctuation">]</span> --add-port<span class="token operator">=</span><span class="token punctuation">[</span>-<span class="token punctuation">]</span>/ <span class="token punctuation">[</span>-–timeout<span class="token operator">=</span><span class="token punctuation">]</span> 
+firewall-cmd --permanent --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">80</span>/tcp        <span class="token comment"># 开放端口</span>
+firewall-cmd --permanent --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">1000</span>-2000/tcp <span class="token comment"># 开放端口段</span>
+firewall-cmd --permanent --zone<span class="token operator">=</span>public --remove-port<span class="token operator">=</span><span class="token number">80</span>/tcp     <span class="token comment"># 关闭端口</span>
+
+firewall-cmd --permanent --add-rich-rule<span class="token operator">=</span><span class="token string">'rule family=ipv4 source address=192.168.1.1 accept'</span>    <span class="token comment"># 放通某个IP访问</span>
+firewall-cmd --permanent --add-rich-rule<span class="token operator">=</span><span class="token string">'rule family=ipv4 source address=192.168.1.0/24 accept'</span> <span class="token comment"># 放通某个IP段访问</span>
+firewall-cmd --permanent --add-rich-rule<span class="token operator">=</span><span class="token string">'rule family=ipv4 source address=192.168.1.1 drop'</span>      <span class="token comment"># 禁止某个IP访问</span>
+firewall-cmd --permanent --remove-rich-rule<span class="token operator">=</span><span class="token string">'rule family=ipv4 source address=192.168.1.1 accept'</span> <span class="token comment"># 移除规则</span>
+
+firewall-cmd --permanent --add-rich-rule<span class="token operator">=</span><span class="token string">'rule family=ipv4 source address=192.168.1.1 port protocol=tcp port=6379 accept'</span> <span class="token comment"># 放通某个IP访问某端口</span>
+firewall-cmd --permanent --add-rich-rule<span class="token operator">=</span><span class="token string">'rule family=ipv4 source address=192.168.1.1 port protocol=tcp port=6379 drop'</span>   <span class="token comment"># 禁止某个IP访问某端口</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h2 id="使用-iptables"><a href="#使用-iptables" class="header-anchor">#</a> 使用 iptables</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">service</span> iptables save <span class="token comment"># 保存iptables，否则数重启后失效</span>
+<span class="token function">cat</span> /etc/sysconfig/iptables <span class="token comment"># iptables 规则文件</span>
+
+iptables -nL <span class="token punctuation">[</span>--line-numbers<span class="token punctuation">]</span> <span class="token comment"># 列出(list)指定链中所有的规则进行查看，显示规则编号</span>
+
+<span class="token comment"># 链：INPUT、OUTPUT、FORWARD</span>
+<span class="token comment"># 链的规则匹配逻辑：</span>
+<span class="token comment"># 1.从上往下依次匹配</span>
+<span class="token comment"># 2.一但匹配上，就不再往下匹配了</span>
+<span class="token comment"># 3.默认规则是放行所有</span>
+
+iptables -F <span class="token comment"># 清空（flush）所有规则，不会处理默认的规则</span>
+iptables -A <span class="token comment"># 在指定链添加(append)一条规则，末尾</span>
+iptables -I <span class="token comment"># 在指定链插入(insert)一条规则，默认第一行</span>
+iptables -D <span class="token comment"># 删除(delete)指定链中的某一条规则，可以按规则序号和内容删除</span>
+<span class="token comment"># iptables -D INPUT 序号 # 删除指定链上的指定序号</span>
+iptables -P <span class="token comment"># 设置指定链的默认策略（policy）</span>
+
+<span class="token comment"># -p协议，-s源地址，-d目标地址，--sport源端口，--dport目标端口</span>
+<span class="token comment"># -j处理动作 ACCEPT、DROP、REJECT、REDIRECT</span>
+
+<span class="token comment"># 常用</span>
+iptables -I INPUT -p icmp -j REJECT <span class="token comment"># 拒绝进入防火墙的所有ICMP协议数据包</span>
+iptables -A FORWARD -p <span class="token operator">!</span> icmp -j ACCEPT <span class="token comment"># 允许防火墙转发除ICMP协议以外的所有数据包</span>
+
+<span class="token comment"># 拒绝来自192.168.1.10主机的数据，允许来自192.168.0.0/24网段的数据；注意要把拒绝的放在前面，不然不起作用</span>
+iptables -A INPUT -s <span class="token number">192.168</span>.1.11 -j REJECT
+iptables -A INPUT -s <span class="token number">192.168</span>.0.0/24 -j ACCEPT
+
+<span class="token comment"># 只开放本机的80、20、21、20450-20480，放行外部主机发住服务器其它端口的应答数据包，将其他入站数据包均予以丢弃处理。</span>
+iptables -I INPUT -p tcp -m multiport --dport <span class="token number">20,21</span>,80 -j ACCEPT
+iptables -I INPUT -p tcp --dport <span class="token number">20450</span>:20480 -j ACCEPT
+iptables -I INPUT -p tcp -m state --state ESTABLISHED -j ACCEPT
+iptables -P INPUT DROP
+
+<span class="token comment"># 封禁某个ip</span>
+iptables -I INPUT -s <span class="token number">10.0</span>.0.7 -j DROP
+
+<span class="token comment"># 封掉3306端口</span>
+iptables -I INPUT -p tcp --dport <span class="token number">3306</span> -j DROP
+
+<span class="token comment"># 除了127.0.0.1以外，禁止任何访问9091、9092、9093端口，-d感觉替换成-s也可以</span>
+iptables -I INPUT                -p tcp -m multiport --dport <span class="token number">9091,9092</span>,9093 -j DROP
+iptables -I INPUT   -d <span class="token number">127.0</span>.0.1 -p tcp -m multiport --dport <span class="token number">9091,9092</span>,9093 -j ACCEPT
+<span class="token comment"># 或（未测试）</span>
+iptables -I INPUT <span class="token operator">!</span> -d <span class="token number">127.0</span>.0.1 -p tcp -m multiport --dport <span class="token number">9091,9092</span>,9093 -j DROP
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/sui-bi/sui-bi/java-zhong-hashmapde-put-yu-compute.html" class="prev">
+        Java 中 HashMap 的 put 与 compute，computeIfAbsent 与 putIfAbsent 的区别
+      </a></span> <span class="next"><a href="/sui-bi/sui-bi/docker-xiang-guan.html">
+        docker 相关
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9560cdf5.js" defer></script><script src="/assets/js/2.3860c10d.js" defer></script><script src="/assets/js/15.6a578106.js" defer></script>
+  </body>
+</html>

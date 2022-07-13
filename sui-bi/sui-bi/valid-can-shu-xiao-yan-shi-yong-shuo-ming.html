@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>@Valid 参数校验使用说明 | NFE-W`S BLOG</title>
+    <meta name="generator" content="VuePress 1.9.4">
+    <link rel="icon" href="/assets/avatar.jpg">
+    <meta name="description" content="Just a study note for myself">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.9560cdf5.js" as="script"><link rel="preload" href="/assets/js/2.3860c10d.js" as="script"><link rel="preload" href="/assets/js/10.3ad98984.js" as="script"><link rel="prefetch" href="/assets/js/11.1d1d4f3c.js"><link rel="prefetch" href="/assets/js/12.1c9bed86.js"><link rel="prefetch" href="/assets/js/13.9443e294.js"><link rel="prefetch" href="/assets/js/14.b123db89.js"><link rel="prefetch" href="/assets/js/15.6a578106.js"><link rel="prefetch" href="/assets/js/16.c74803e1.js"><link rel="prefetch" href="/assets/js/17.8aafbb96.js"><link rel="prefetch" href="/assets/js/18.ad72cc9e.js"><link rel="prefetch" href="/assets/js/19.4f7b7ed7.js"><link rel="prefetch" href="/assets/js/20.33c41533.js"><link rel="prefetch" href="/assets/js/21.a9abdf04.js"><link rel="prefetch" href="/assets/js/22.76aeb9d7.js"><link rel="prefetch" href="/assets/js/23.21d933cb.js"><link rel="prefetch" href="/assets/js/24.c388c30d.js"><link rel="prefetch" href="/assets/js/3.ecdaafbf.js"><link rel="prefetch" href="/assets/js/4.0c4f7f25.js"><link rel="prefetch" href="/assets/js/5.745c46fb.js"><link rel="prefetch" href="/assets/js/6.d4384980.js"><link rel="prefetch" href="/assets/js/7.05319014.js"><link rel="prefetch" href="/assets/js/8.1d30ec6b.js"><link rel="prefetch" href="/assets/js/9.bdb7d9b3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">NFE-W`S BLOG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/sui-bi/" class="nav-link router-link-active">
+  随笔
+</a></div><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://github.com/nfe-w/my-note" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Repo
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/nfe-w" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/sui-bi/" class="nav-link router-link-active">
+  随笔
+</a></div><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://github.com/nfe-w/my-note" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Repo
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/nfe-w" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>随笔</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/sui-bi/sui-bi/vuepress-pei-zhi-ji-lu.html" class="sidebar-link">VuePress 配置记录</a></li><li><a href="/sui-bi/sui-bi/filebeat-yu-logstash.html" class="sidebar-link">filebeat 与 logstash</a></li><li><a href="/sui-bi/sui-bi/valid-can-shu-xiao-yan-shi-yong-shuo-ming.html" aria-current="page" class="active sidebar-link">@Valid 参数校验使用说明</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/valid-can-shu-xiao-yan-shi-yong-shuo-ming.html#用处-解决的痛点" class="sidebar-link">用处/解决的痛点</a></li><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/valid-can-shu-xiao-yan-shi-yong-shuo-ming.html#使用方法" class="sidebar-link">使用方法</a></li><li class="sidebar-sub-header"><a href="/sui-bi/sui-bi/valid-can-shu-xiao-yan-shi-yong-shuo-ming.html#常用注解-在javax-validation-constraints包下" class="sidebar-link">常用注解（在javax.validation.constraints包下）</a></li></ul></li><li><a href="/sui-bi/sui-bi/suppresswarnings-zhu-jie.html" class="sidebar-link">@SuppressWarnings() 注解参数</a></li><li><a href="/sui-bi/sui-bi/externalizable-yu-serializable-yi-tong.html" class="sidebar-link">Externalizable 与 Serializable 异同</a></li><li><a href="/sui-bi/sui-bi/java-zhong-de-xie-bian-yu-ni-bian.html" class="sidebar-link">Java 中的协变与逆变</a></li><li><a href="/sui-bi/sui-bi/java-zhong-hashmapde-put-yu-compute.html" class="sidebar-link">Java 中 HashMap 的 put 与 compute，computeIfAbsent 与 putIfAbsent 的区别</a></li><li><a href="/sui-bi/sui-bi/linux-fang-huo-qiang-bi-ji.html" class="sidebar-link">Linux 防火墙笔记</a></li><li><a href="/sui-bi/sui-bi/docker-xiang-guan.html" class="sidebar-link">docker 相关</a></li><li><a href="/sui-bi/sui-bi/mmac-docker-maven.html" class="sidebar-link">M1 Mac 使用 dockerfile-maven-plugin 插件 build 镜像报错问题</a></li><li><a href="/sui-bi/sui-bi/docker-bu-shu-elk.html" class="sidebar-link">docker 部署 ELK</a></li><li><a href="/sui-bi/sui-bi/logback-spring-chang-yong-pei-zhi.html" class="sidebar-link">logback-spring.xml 常用配置</a></li><li><a href="/sui-bi/sui-bi/spring-boot-xiang-mu-da-fat-jar-de-fang-fa.html" class="sidebar-link">spring-boot 项目打 fat-jar 的方法</a></li><li><a href="/sui-bi/sui-bi/linux-ming-ling-ji-lu.html" class="sidebar-link">Linux 命令记录</a></li><li><a href="/sui-bi/sui-bi/spring-cloud-xiang-guan.html" class="sidebar-link">spring-cloud 相关</a></li><li><a href="/sui-bi/sui-bi/dai-ma-ri-zhi-ji-lu-shi-jian.html" class="sidebar-link">My Logging Best Practices</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="valid-参数校验使用说明"><a href="#valid-参数校验使用说明" class="header-anchor">#</a> @Valid 参数校验使用说明</h1> <h2 id="用处-解决的痛点"><a href="#用处-解决的痛点" class="header-anchor">#</a> 用处/解决的痛点</h2> <ol><li>写在 controller 的请求参数上，可以<strong>避免繁琐的手动 if 判断参数</strong></li> <li>可以使生成的 Yapi 接口文档参数列表，<strong>明确参数的必填属性</strong>，方便前后端开发人员进行对接</li> <li><strong>规范性问题要求</strong></li></ol> <h2 id="使用方法"><a href="#使用方法" class="header-anchor">#</a> 使用方法</h2> <h3 id="增加全局异常拦截器"><a href="#增加全局异常拦截器" class="header-anchor">#</a> 增加全局异常拦截器</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>support<span class="token punctuation">.</span></span><span class="token class-name">DefaultMessageSourceResolvable</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">BindException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span></span><span class="token class-name">MethodArgumentNotValidException</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>stream<span class="token punctuation">.</span></span><span class="token class-name">Collectors</span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@RestControllerAdvice</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GlobalExceptionHandler</span> <span class="token punctuation">{</span>
+  
+    <span class="token comment">// ...原有的拦截器...</span>
+
+	  <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span><span class="token class-name">MethodArgumentNotValidException</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Result</span> <span class="token function">handleMethodArgumentNotValidException</span><span class="token punctuation">(</span><span class="token class-name">MethodArgumentNotValidException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> errorMsgList <span class="token operator">=</span> e<span class="token punctuation">.</span><span class="token function">getBindingResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getAllErrors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token class-name">DefaultMessageSourceResolvable</span><span class="token operator">::</span><span class="token function">getDefaultMessage</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        logger<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>errorMsgList<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">ResultUtil</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>errorMsgList<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span><span class="token class-name">BindException</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Result</span> <span class="token function">handleBindException</span><span class="token punctuation">(</span><span class="token class-name">BindException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> errorMsgList <span class="token operator">=</span> e<span class="token punctuation">.</span><span class="token function">getBindingResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getAllErrors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token class-name">DefaultMessageSourceResolvable</span><span class="token operator">::</span><span class="token function">getDefaultMessage</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        logger<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>errorMsgList<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">ResultUtil</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>errorMsgList<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h3 id="post请求且使用dto接收参数"><a href="#post请求且使用dto接收参数" class="header-anchor">#</a> POST请求且使用DTO接收参数</h3> <ol><li>对于请求参数 dto ，将需要进行参数校验的属性，打上相应的注解即可，如：@NotBlank(message = &quot;xxx 不能为空&quot;)</li> <li>对于 controller，在使用了该 dto 作为参数的方法上，参数 dto 前增加 @Valid 注解即可</li></ol> <blockquote><p>代码对比：
+<img src="https://s2.loli.net/2022/02/16/jPYTmlFCeXDqaUR.png" alt="image-20220216100858952"></p> <p>生成的 Yapi 接口文档对比：
+<img src="https://s2.loli.net/2022/02/15/efwjqscVpMEQRxB.png" alt="image-20220215132428376"></p></blockquote> <h3 id="get请求且使用dto接收参数"><a href="#get请求且使用dto接收参数" class="header-anchor">#</a> GET请求且使用DTO接收参数</h3> <ul><li>使用方法如上，只需要 dto 属性与方法参数前增加注解即可</li></ul> <blockquote><p><img src="https://s2.loli.net/2022/02/15/1mskgyqYxO3BIPL.png" alt="image-20220215141658870"></p></blockquote> <h3 id="备注"><a href="#备注" class="header-anchor">#</a> 备注</h3> <ol><li><u><strong>强烈建议每个校验注解都写明异常的message</strong></u></li> <li>本文中使用到的注解均为 <code>javax.validation</code> 包及其子包下的注解</li></ol> <h2 id="常用注解-在javax-validation-constraints包下"><a href="#常用注解-在javax-validation-constraints包下" class="header-anchor">#</a> 常用注解（在javax.validation.constraints包下）</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>@NotNull
+限制必须不为null
+
+@NotEmpty
+限制注解的元素值不为null且不为空（字符串长度不为0、集合大小不为0）
+
+@NotBlank
+限制注解的字符串不为空（不为null、去除首位空格后长度为0），不同于@NotEmpty，@NotBlank只应用于字符串且在比较时会去除字符串的空格
+
+@Size(min, max)
+限制集合大小、字符串长度必须在min到max之间
+
+@Max(value)
+限制必须为一个不大于指定值的数字
+
+@Min(value)
+限制必须为一个不小于指定值的数字
+
+@DecimalMax(value)
+限制必须为一个不大于指定值的数字
+
+@DecimalMin(value)
+限制必须为一个不小于指定值的数字
+
+@Pattern(regexp)
+限制必须符合指定的正则表达式
+
+========下方为不常用==============================
+@Null
+限制只能为null
+
+@AssertFalse
+限制必须为false
+
+@AssertTrue
+限制必须为true
+
+@Digits(integer,fraction)
+限制必须为一个小数，且整数部分的位数不能超过integer，小数部分的位数不能超过fraction
+
+@Future
+限制必须是一个将来的日期
+
+@Past
+限制必须是一个过去的日期
+
+@Email
+验证注解的元素值是Email，也可以通过正则表达式和flag指定自定义的email格式
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/sui-bi/sui-bi/filebeat-yu-logstash.html" class="prev">
+        filebeat 与 logstash
+      </a></span> <span class="next"><a href="/sui-bi/sui-bi/suppresswarnings-zhu-jie.html">
+        @SuppressWarnings() 注解参数
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9560cdf5.js" defer></script><script src="/assets/js/2.3860c10d.js" defer></script><script src="/assets/js/10.3ad98984.js" defer></script>
+  </body>
+</html>
